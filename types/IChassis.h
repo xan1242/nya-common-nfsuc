@@ -1,0 +1,96 @@
+class FFBSteeringState;
+class SimSurface;
+
+class ISteeringWheel : public UCOM::IUnknown {
+public:
+	enum SteeringType {
+		kGamePad = 0,
+		kWheelSpeedSensitive = 1,
+		kWheelSpeedInsensitive = 2,
+	};
+};
+
+class IChassis : public UCOM::IUnknown {
+public:
+	static inline uint32_t IHandle = 0x402940;
+
+	virtual char *GetChassisName();
+	virtual float GetWheelTraction(unsigned int);
+	virtual float GetWheelDynamicSlipAngle(unsigned int);
+	virtual float GetWheelSlipRatio(unsigned int);
+	virtual float GetDragBoost();
+	virtual unsigned int GetNumWheels();
+	virtual const UMath::Vector3 *GetWheelPos(unsigned int);
+	virtual const UMath::Vector3 *GetWheelLocalPos(unsigned int);
+	virtual UMath::Vector3 *GetWheelCenterPos(UMath::Vector3 *result, unsigned int);
+	virtual float GetWheelTorque(unsigned int);
+	virtual float GetWheelBrakeTorque(unsigned int);
+	virtual float GetWheelLoad(unsigned int);
+	virtual float GetWheelRoadHeight(unsigned int);
+	virtual bool IsWheelOnGround(unsigned int);
+	virtual float GetCompression(unsigned int);
+	virtual float GuessCompression(unsigned int, float);
+	virtual void ForceCompression(unsigned int, float);
+	virtual float GetWheelSlip(unsigned int);
+	virtual float GetToleratedSlip(unsigned int);
+	virtual float GetWheelSkid(unsigned int);
+	virtual float GetWheelSlipAngle(unsigned int);
+	virtual const UMath::Vector3 *GetWheelRoadNormal(unsigned int);
+	virtual const SimSurface *GetWheelRoadSurface(unsigned int);
+	virtual const UMath::Vector3 *GetWheelVelocity(unsigned int);
+	virtual int GetNumWheelsOnGround();
+	virtual unsigned int GetNumWheelsOnBand();
+	virtual float GetWheelAngularVelocity(int);
+	virtual void SetWheelAngularVelocity(int, float);
+	virtual void SetWheelMaxAngularVelocity(int, float);
+	virtual float GetWheelSteer(unsigned int);
+	virtual bool CalculateFFBSteeringState(FFBSteeringState *);
+	virtual float GetSuspensionDigression(unsigned int);
+	virtual float GetWheelLateralForce(unsigned int);
+	virtual float GetRideHeight(unsigned int);
+	virtual float GetWheelRadius(unsigned int);
+	virtual float GetMaxSteering();
+	virtual void MatchSpeed(float, bool);
+	virtual float GetDriveshaftTorqueEffect();
+	virtual float GetRenderMotion();
+	virtual ISteeringWheel::SteeringType GetSteeringType();
+	virtual float GetWheelTorqueRatio(unsigned int);
+	virtual float GetWheelIdealTorque(unsigned int);
+	virtual void SetWheelRemoved(unsigned int, bool);
+	virtual void SetWheelMaximumTorqueRatio(unsigned int, float);
+	virtual bool IsAntiBrakeLockOn();
+	virtual int GetAntiBrakeLockLevel();
+	virtual void SetAntiBrakeLockLevel(int);
+	virtual bool IsStabilityManagementOn();
+	virtual int GetStabilityManagementLevel();
+	virtual void SetStabilityManagementLevel(int);
+	virtual bool IsDriftAsssistOn();
+	virtual int GetDriftAssistLevel();
+	virtual void SetDriftAssistLevel(int);
+	virtual bool IsDriftGlueToRoadOn();
+	virtual int GetDriftGlueToRoadLevel();
+	virtual void SetDriftGlueToRoadLevel(int);
+	virtual bool IsDriftDynamicBrakeOn();
+	virtual int GetDriftDynamicBrakeLevel();
+	virtual void SetDriftDynamicBrakeLevel(int);
+	virtual bool IsDriftSpeedControlOn();
+	virtual int GetDriftSpeedControlLevel();
+	virtual void SetDriftSpeedControlLevel(int);
+	virtual bool IsRacelineAssistOn();
+	virtual int GetRacelineAssistLevel();
+	virtual void SetRacelineAssistLevel(int);
+	virtual bool IsBrakingAssistOn();
+	virtual int GetBrakingAssistLevel();
+	virtual void SetBrakingAssistLevel(int);
+	virtual float GetDragCoefficient();
+	virtual float GetDownCoefficient();
+	virtual float GetStaticGripForSpeed(float);
+	virtual void SetClutchKickExtraTireSpin(float);
+	virtual float GetWheelieAngle();
+	virtual bool IsStaticResetCondition();
+	virtual void SetAICatchOverride(bool);
+	virtual float GetSlipToGripImpactTime();
+	virtual float GetJumpTime();
+	virtual float GetTimeFromLanding();
+	virtual bool IsCounterSteering();
+};

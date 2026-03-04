@@ -1,7 +1,6 @@
 class IDrafter : public UCOM::IUnknown {};
 class IAttributeable : public UCOM::IUnknown {};
 class INISCarControl : public UCOM::IUnknown {};
-class IChassis : public UCOM::IUnknown {};
 class ICollisionBody;
 class IEngineDamage;
 class ISpikeable;
