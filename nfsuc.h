@@ -17,9 +17,13 @@ enum BluePrintType {
 typedef uint32_t HSIMABLE__;
 typedef uint32_t HCAUSE__;
 typedef uint32_t HSIMPROFILE__;
+typedef uint32_t HSIMSERVICE__;
+typedef uint32_t HSIMTASK__;
 typedef HSIMABLE__* HSIMABLE;
 typedef HCAUSE__* HCAUSE;
 typedef HSIMPROFILE__* HSIMPROFILE;
+typedef HSIMSERVICE__* HSIMSERVICE;
+typedef HSIMTASK__* HSIMTASK;
 
 namespace Hermes {
 	typedef uint32_t _h_HHANDLER__;
@@ -71,7 +75,18 @@ struct type_bStringHash {
 #include "types/FEPlayerCarDB.h"
 #include "types/UserProfile.h"
 #include "types/eView.h"
+#include "types/IAttributeable.h"
 #include "types/ChassisSimple.h"
+
+class BehaviorParams {
+public:
+	const Sim::Param *fparams;
+	PhysicsObject *fowner;
+	const UCrc32 *fSig;
+	const UCrc32 *fMechanic;
+};
+
+class SuspensionParams : Sim::Param {};
 
 namespace FE {
 	class FEPauseStateManager {
