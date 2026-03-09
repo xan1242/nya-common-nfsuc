@@ -69,7 +69,14 @@ public:
 		memset(this,0,sizeof(*this));
 		fYOffset = 0.025;
 	}
+
+	void SetTolerance(float liftAmount) {
+		fYOffset = liftAmount;
+	}
+
+	static inline auto Update = (bool(__thiscall*)(WWorldPos*, UMath::Vector3* pos, UMath::Vector4* dest, bool usecache, const WCollider* collider, bool keep_valid))0x8969B0;
 };
+static_assert(offsetof(WWorldPos, fHeight) == 0x2C);
 
 class WaveData3 {
 public:

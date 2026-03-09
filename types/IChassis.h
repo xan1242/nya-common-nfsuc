@@ -1,15 +1,6 @@
 class FFBSteeringState;
 class SimSurface;
 
-class ISteeringWheel : public UCOM::IUnknown {
-public:
-	enum SteeringType {
-		kGamePad = 0,
-		kWheelSpeedSensitive = 1,
-		kWheelSpeedInsensitive = 2,
-	};
-};
-
 class IChassis : public UCOM::IUnknown {
 public:
 	static inline uint32_t IHandle = 0x402940;

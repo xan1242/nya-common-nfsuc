@@ -54,7 +54,14 @@ struct SituationInDraftZone {
 	float normalizedDistanceToCenter;
 };
 
-class PhysicsObject;
+// todo this is horrible and inaccurate
+class PhysicsObject {
+public:
+	uintptr_t vtable;
+	uint8_t _4[0x4];
+	UCOM::Object Object;
+};
+
 class Behavior {
 public:
 	uint8_t _4[0x20];
@@ -157,6 +164,8 @@ static_assert(offsetof(Chassis, mVehicle) == 0x40);
 
 class SimSurface : public Attrib::Gen::simsurface {
 public:
+	static inline auto& kNull = *(SimSurface*)0x1279910;
+
 	SimSurface() {}
 	SimSurface(const Attrib::Collection *collection) {
 		((void(__thiscall*)(SimSurface*, const Attrib::Collection*))0x7B6710)(this, collection);

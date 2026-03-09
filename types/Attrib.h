@@ -74,6 +74,7 @@ namespace Attrib {
 		//	((void(__thiscall*)(Instance*))0x5301F0)(this);
 		//}
 
+		static inline auto Change = (void(__thiscall*)(Instance*, const Collection* collection))0x468A70;
 		static inline auto GetAttributePointer = (void*(__thiscall*)(Instance*, uint32_t attributeKey, uint32_t index))0x4649B0;
 	};
 

@@ -15,8 +15,8 @@ namespace UCOM {
 			return ((T*(__thiscall*)(Object*, uint32_t))(0x5F6700))(this, T::IHandle);
 		}
 		template<typename T>
-		T* Add(T* ref) {
-			return ((T*(__thiscall*)(Object*, uint32_t, T*))(0x5F6A60))(this, T::IHandle, ref);
+		void Add(T* ref) {
+			return ((void(__thiscall*)(Object*, uint32_t, T*))(0x5F6A60))(this, T::IHandle, ref);
 		}
 	};
 	static_assert(sizeof(Object) == 0x10);

@@ -45,6 +45,7 @@ struct type_bStringHash {
 #include "types/IPlayer.h"
 #include "types/ISimable.h"
 #include "types/IVehicle.h"
+#include "types/ISteeringWheel.h"
 #include "types/IChassis.h"
 #include "types/ITransmission.h"
 #include "types/IEngine.h"

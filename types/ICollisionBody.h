@@ -19,7 +19,7 @@ public:
 	virtual bool HasHadBarrierCollision();
 	virtual bool HasHadObjectCollision();
 	virtual void EnableCollisionGeometries(UCrc32, bool);
-	virtual bool DistributeMass();
+	//virtual bool DistributeMass();
 	virtual bool IsAttachedToWorld();
 	virtual void AttachedToWorld(bool, float);
 	virtual bool IsInGroundContact();
