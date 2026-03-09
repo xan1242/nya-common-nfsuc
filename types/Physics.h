@@ -157,7 +157,18 @@ namespace Physics {
 
 	class Tunings {
 	public:
-		float Value[7];
+		enum Path {
+			STEERING = 0,
+			HANDLING = 1,
+			BRAKES = 2,
+			RIDEHEIGHT = 3,
+			AERODYNAMICS = 4,
+			NOS = 5,
+			INDUCTION = 6,
+			MAX_TUNINGS = 7,
+		};
+
+		float Value[MAX_TUNINGS];
 	};
 }
 static_assert(sizeof(Physics::Upgrades::Tuning) == 0xC);
