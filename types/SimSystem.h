@@ -7,7 +7,8 @@ namespace Sim {
 	};
 
 	auto Exists = (bool(*)())0x7B6050;
-	auto GetTime = (uint64_t(*)())0x7B61B0;
+	auto GetTime = (float(*)())0x7B61A0;
+	auto GetTimeMicroseconds = (uint64_t(*)())0x7B61B0;
 	auto GetState = (State(*)())0x7B6060;
 }
 

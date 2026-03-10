@@ -54,6 +54,11 @@ class WSurface : public CARP::CollisionSurface {};
 
 class WWorldPos {
 public:
+	enum FailStrategy {
+		kFail_KeepValid = 0,
+		kFail_Invalidate = 1,
+	};
+
 	UMath::Vector3 fPt0;
 	float fYOffset;
 	UMath::Vector3 fPt1;
@@ -74,7 +79,7 @@ public:
 		fYOffset = liftAmount;
 	}
 
-	static inline auto Update = (bool(__thiscall*)(WWorldPos*, UMath::Vector3* pos, UMath::Vector4* dest, bool usecache, const WCollider* collider, bool keep_valid))0x8969B0;
+	static inline auto Update = (bool(__thiscall*)(WWorldPos*, UMath::Vector3* pos, UMath::Vector4* dest, bool usecache, const WCollider* collider, FailStrategy failStrategy))0x8969B0;
 };
 static_assert(offsetof(WWorldPos, fHeight) == 0x2C);
 
