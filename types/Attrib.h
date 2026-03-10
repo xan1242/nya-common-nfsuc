@@ -11,7 +11,11 @@ namespace Attrib {
 	public:
 		unsigned int mKey;
 		ClassPrivate* mPrivates;
+
+		auto GetFirstCollection() { auto f = (uint32_t(__thiscall*)(Class*))0x464620; return f(this); }
+		auto GetNextCollection(uint32_t prev) { auto f = (uint32_t(__thiscall*)(Class*, uint32_t))0x464640; return f(this, prev); }
 	};
+	static_assert(offsetof(Class, mPrivates) == 4);
 
 	class ClassPrivate : public Class {
 	public:
@@ -77,6 +81,42 @@ namespace Attrib {
 		static inline auto Change = (void(__thiscall*)(Instance*, const Collection* collection))0x468A70;
 		static inline auto GetAttributePointer = (void*(__thiscall*)(Instance*, uint32_t attributeKey, uint32_t index))0x4649B0;
 	};
+
+	class DatabasePrivate;
+	class Database {
+	public:
+		DatabasePrivate* mPrivates;
+
+		virtual void _dtor();
+
+		static inline auto& sThis = *(Database**)0xD834D0;
+	};
+	static_assert(offsetof(Database, mPrivates) == 0x4);
+
+	class ClassTable {
+	public:
+		class Node {
+		public:
+			unsigned int mKey;
+			Attrib::Class* mPtr;
+			unsigned int mMax;
+		};
+		static_assert(sizeof(Node) == 0xC);
+
+		Node* mTable;
+		uint16_t mTableSize;
+		uint16_t mNumEntries;
+		uint16_t mFixedAlloc;
+		uint16_t mWorstCollision;
+
+		static inline auto Find = (int(__thiscall*)(ClassTable*, uint32_t k))0x463BE0;
+	};
+
+	class DatabasePrivate : public Database {
+	public:
+		ClassTable mClasses;
+	};
+	static_assert(offsetof(DatabasePrivate, mClasses) == 0x8);
 
 	class StringKey {
 	public:

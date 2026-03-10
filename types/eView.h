@@ -144,7 +144,10 @@ public:
 	float NoiseIntensity;
 	CameraBlender mCameraBlender;
 	bool mEnableBlender;
+
+	static inline auto SetCameraMatrix = (void(__thiscall*)(Camera*, const bMatrix4* m, float fTime))0x4DCB70;
 };
+static_assert(offsetof(Camera, CurrentKey.FarZ) == 0x1A4);
 
 class WCollider;
 class Camera;
@@ -153,6 +156,7 @@ class eView;
 class CameraAnchor;
 class CameraMover : public bTNode<CameraMover> {
 public:
+	uint8_t _0[0xC];
 	CameraMoverTypes Type;
 	int ViewID;
 	int Enabled;
@@ -193,6 +197,8 @@ public:
 	virtual void Disable();
 	virtual const bVector3 *GetTarget();
 };
+static_assert(offsetof(CameraMover, pView) == 0x24);
+static_assert(offsetof(CameraMover, pCamera) == 0x28);
 
 class eDynamicLightContext;
 class eView : public eViewPlatInterface {

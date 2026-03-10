@@ -80,6 +80,24 @@ namespace NyaHooks {
 		}
 	}
 
+	namespace CameraMoverHook {
+		std::vector<void(*)(CameraMover*)> aFunctions;
+
+		auto OrigFunction = (void(__thiscall*)(CameraMover*, float))nullptr;
+		void __thiscall HookedFunction(CameraMover* a1, float a2) {
+			OrigFunction(a1, a2);
+			for (auto& func : aFunctions) {
+				func(a1);
+			}
+		}
+
+		void Init() {
+			if (OrigFunction) return;
+			OrigFunction = (void(__thiscall*)(CameraMover*, float))(*(uintptr_t*)0xBE4948);
+			NyaHookLib::Patch(0xBE4948, &HookedFunction);
+		}
+	}
+
 	namespace LateInitHook {
 		std::vector<void(*)()> aPreFunctions;
 		std::vector<void(*)()> aFunctions;
