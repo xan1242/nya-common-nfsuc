@@ -80,6 +80,11 @@ struct type_bStringHash {
 #include "types/ChassisSimple.h"
 #include "types/FastMem.h"
 
+class CameraAI {
+public:
+	static inline auto SetAction = (void(__cdecl*)(int, const char*))0x4D2480;
+};
+
 class BehaviorParams {
 public:
 	const Sim::Param *fparams;

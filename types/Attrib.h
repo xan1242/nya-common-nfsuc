@@ -49,9 +49,19 @@ namespace Attrib {
 		uint8_t mFlags;
 	};
 
+	class HashMap {
+	public:
+		Attrib::Node *mTable;
+		uint16_t mTableSize;
+		uint16_t mNumEntries;
+		uint16_t mRefCount;
+		uint8_t mWorstCollision;
+		uint8_t mKeyShift;
+	};
+
 	class Collection {
 	public:
-		uint8_t _mTable[0xC];
+		HashMap mTable;
 		Collection* mParent;
 		uint32_t mKey;
 		Class* mClass;
@@ -61,6 +71,7 @@ namespace Attrib {
 		static inline auto GetData = (void*(__thiscall*)(Collection*, uint32_t attributeKey, uint32_t index))0x464680;
 		static inline auto GetNode = (Attrib::Node*(__thiscall*)(Collection*, uint32_t attributeKey, const Attrib::Collection **container))0x4649B0;
 	};
+	static_assert(offsetof(Collection, mParent) == 0xC);
 
 	class Instance {
 	public:
