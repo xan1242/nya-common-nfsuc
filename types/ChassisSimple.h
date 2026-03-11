@@ -165,6 +165,7 @@ static_assert(offsetof(Chassis, mVehicle) == 0x40);
 class SimSurface : public Attrib::Gen::simsurface {
 public:
 	static inline auto& kNull = *(SimSurface*)0x1279910;
+	static inline auto& mNullSpec = *(Attrib::Collection**)0x12798A0;
 
 	SimSurface() {}
 	SimSurface(const Attrib::Collection *collection) {
