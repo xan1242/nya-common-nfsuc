@@ -62,7 +62,18 @@ public:
 	UCOM::Object Object;
 };
 
-class Behavior {
+namespace Sim
+{
+	class IServiceable
+	{
+	public:
+		virtual bool OnService(void* hCon, void* pkt) {
+			return false;
+		}
+	};
+}
+
+class Behavior : public Sim::IServiceable {
 public:
 	uint8_t _4[0x20];
 	bool mPaused;
@@ -73,7 +84,7 @@ public:
 	int mPriority;
 	HSIMPROFILE mProfile;
 
-	virtual void _vt0();
+	//virtual void _vt0() {}
 };
 static_assert(offsetof(Behavior, mPriority) == 0x38);
 

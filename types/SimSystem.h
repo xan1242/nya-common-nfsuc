@@ -6,16 +6,16 @@ namespace Sim {
 		STATE_IDLE = 4,
 	};
 
-	auto Exists = (bool(*)())0x7B6050;
-	auto GetTime = (float(*)())0x7B61A0;
-	auto GetTimeMicroseconds = (uint64_t(*)())0x7B61B0;
-	auto GetState = (State(*)())0x7B6060;
+	inline auto Exists = (bool(*)())0x7B6050;
+	inline auto GetTime = (float(*)())0x7B61A0;
+	inline auto GetTimeMicroseconds = (uint64_t(*)())0x7B61B0;
+	inline auto GetState = (State(*)())0x7B6060;
 }
 
 class SimSystem;
 
 namespace Sim {
 	namespace Internal {
-		auto& mSystem = *(SimSystem**)0x1278FFC;
+		inline auto& mSystem = *(SimSystem**)0x1278FFC;
 	}
 }

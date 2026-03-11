@@ -224,4 +224,4 @@ public:
 };
 static_assert(sizeof(eView) == 0x80);
 
-auto eViews = (eView*)0x12751E0;
+inline auto eViews = (eView*)0x12751E0;

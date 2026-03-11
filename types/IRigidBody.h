@@ -19,7 +19,7 @@ public:
 	virtual const UMath::Vector3 *GetUpVector();
 	virtual const UMath::Matrix4 *GetTransform();
 	virtual void GetOrientation(UMath::Vector4 *);
-	virtual UMath::Vector3 *GetDimension(UMath::Vector3 *result);
+    virtual UMath::Vector3* GetDimension(UMath::Vector3 *result);
 	virtual void _GetDimension(UMath::Vector3 *);
 	virtual unsigned int GetTriggerFlags();
 	virtual void GetPointVelocity(const UMath::Vector3 *, UMath::Vector3 *);
@@ -35,9 +35,9 @@ public:
 	virtual void ModifyZPos(float);
 	virtual void Resolve(const UMath::Vector3 *, const UMath::Vector3 *);
 	virtual void ResolveForce(const UMath::Vector3 *, const UMath::Vector3 *);
-	virtual void ResolveForce(const UMath::Vector3 *);
+	virtual void _ResolveForce(const UMath::Vector3 *);
 	virtual void ResolveTorque(const UMath::Vector3 *, const UMath::Vector3 *);
-	virtual void ResolveTorque(const UMath::Vector3 *);
+	virtual void _ResolveTorque(const UMath::Vector3 *);
 	virtual const UMath::Vector3 *GetForce();
 	virtual const UMath::Vector3 *GetTorque();
 	virtual void Accelerate(const UMath::Vector3 *, float);

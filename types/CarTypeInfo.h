@@ -76,7 +76,7 @@ public:
 };
 static_assert(sizeof(CarTypeInfo) == 0x130);
 
-auto& CarTypeInfoArray = *(CarTypeInfo**)0x1336598;
-auto& NUM_CARTYPES = *(int*)0xD5AAE8;
+inline auto& CarTypeInfoArray = *(CarTypeInfo**)0x1336598;
+inline auto& NUM_CARTYPES = *(int*)0xD5AAE8;
 
-auto GetCarTypeInfoFromHash = (CarTypeInfo*(*)(uint32_t))0x843630;
+inline auto GetCarTypeInfoFromHash = (CarTypeInfo*(*)(uint32_t))0x843630;

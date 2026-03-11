@@ -142,7 +142,7 @@ namespace Attrib {
 		const Attrib::Collection *mCollectionPtr;
 	};
 
-	auto FindCollection = (Collection*(__cdecl*)(uint32_t classKey, uint32_t collectionKey))0x464A20;
-	auto StringToKey = (uint32_t(__cdecl*)(const char*))0x463A80;
-	auto StringHash32 = StringToKey; // rename
+	inline auto FindCollection = (Collection*(__cdecl*)(uint32_t classKey, uint32_t collectionKey))0x464A20;
+	inline auto StringToKey = (uint32_t(__cdecl*)(const char*))0x463A80;
+	inline auto StringHash32 = StringToKey; // rename
 };
