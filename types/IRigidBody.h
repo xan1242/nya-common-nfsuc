@@ -19,8 +19,8 @@ public:
 	virtual const UMath::Vector3 *GetUpVector();
 	virtual const UMath::Matrix4 *GetTransform();
 	virtual void GetOrientation(UMath::Vector4 *);
-	virtual UMath::Vector3* GetDimension();
-	virtual void GetDimension(UMath::Vector3*);
+    virtual UMath::Vector3* GetDimension(UMath::Vector3 *result);
+	virtual void _GetDimension(UMath::Vector3 *);
 	virtual unsigned int GetTriggerFlags();
 	virtual void GetPointVelocity(const UMath::Vector3 *, UMath::Vector3 *);
 	virtual void SetPosition(const UMath::Vector3 *);
