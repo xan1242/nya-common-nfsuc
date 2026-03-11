@@ -50,14 +50,14 @@ public:
 	static inline auto Construct = (ISimable*(__cdecl*)(Sim::Param params))0x6F7260;
 };
 
-auto& BEHAVIOR_MECHANIC_AI = *(Attrib::StringKey*)0xDE7094;
-auto& BEHAVIOR_MECHANIC_AUDIO = *(Attrib::StringKey*)0xDE6FD4;
-auto& BEHAVIOR_MECHANIC_DAMAGE = *(Attrib::StringKey*)0xDE710C;
-auto& BEHAVIOR_MECHANIC_DRAW = *(Attrib::StringKey*)0xDE6FDC;
-auto& BEHAVIOR_MECHANIC_EFFECTS = *(Attrib::StringKey*)0xDE7060;
-auto& BEHAVIOR_MECHANIC_ENGINE = *(Attrib::StringKey*)0xDE6F3C;
-auto& BEHAVIOR_MECHANIC_INPUT = *(Attrib::StringKey*)0xDE6ED0;
-auto& BEHAVIOR_MECHANIC_RESET = *(Attrib::StringKey*)0xDE7078;
-auto& BEHAVIOR_MECHANIC_RIGIDBODY = *(Attrib::StringKey*)0xDE7070;
-auto& BEHAVIOR_MECHANIC_STYLEMAN = *(Attrib::StringKey*)0xDE6F44;
-auto& BEHAVIOR_MECHANIC_SUSPENSION = *(Attrib::StringKey*)0xDE7124;
+inline auto& BEHAVIOR_MECHANIC_AI = *(Attrib::StringKey*)0xDE7094;
+inline auto& BEHAVIOR_MECHANIC_AUDIO = *(Attrib::StringKey*)0xDE6FD4;
+inline auto& BEHAVIOR_MECHANIC_DAMAGE = *(Attrib::StringKey*)0xDE710C;
+inline auto& BEHAVIOR_MECHANIC_DRAW = *(Attrib::StringKey*)0xDE6FDC;
+inline auto& BEHAVIOR_MECHANIC_EFFECTS = *(Attrib::StringKey*)0xDE7060;
+inline auto& BEHAVIOR_MECHANIC_ENGINE = *(Attrib::StringKey*)0xDE6F3C;
+inline auto& BEHAVIOR_MECHANIC_INPUT = *(Attrib::StringKey*)0xDE6ED0;
+inline auto& BEHAVIOR_MECHANIC_RESET = *(Attrib::StringKey*)0xDE7078;
+inline auto& BEHAVIOR_MECHANIC_RIGIDBODY = *(Attrib::StringKey*)0xDE7070;
+inline auto& BEHAVIOR_MECHANIC_STYLEMAN = *(Attrib::StringKey*)0xDE6F44;
+inline auto& BEHAVIOR_MECHANIC_SUSPENSION = *(Attrib::StringKey*)0xDE7124;

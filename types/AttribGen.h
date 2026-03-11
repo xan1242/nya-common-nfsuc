@@ -301,6 +301,9 @@ namespace Attrib {
 			car_tuning(uint32_t collectionKey, uint32_t msgPort) {
 				((car_tuning*(__thiscall*)(car_tuning*, uint32_t, uint32_t))0x4574E0)(this, collectionKey, msgPort);
 			}
+			car_tuning() {
+				((car_tuning * (__thiscall*)(car_tuning*, uint32_t, uint32_t))0x4574E0)(this, 0, 0);
+			}
 			~car_tuning() {
 				((void(__thiscall*)(car_tuning*))0x468820)(this);
 			}

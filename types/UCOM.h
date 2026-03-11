@@ -25,14 +25,15 @@ namespace UCOM {
 	public:
 		Object* mCOMObject;
 
-		virtual void _vf0() {};
-
 		template<typename T>
 		bool QueryInterface(T** out) {
 			auto p = mCOMObject->Find<T>();
 			*out = p;
 			return p != nullptr;
 		}
+
+		virtual ~IUnknown() {};
 	};
+
 	static_assert(sizeof(IUnknown) == 0x8);
 }

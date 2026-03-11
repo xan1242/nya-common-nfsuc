@@ -24,4 +24,4 @@ public:
 };
 static_assert(sizeof(GameFlowManager) == 0xC);
 
-auto& TheGameFlowManager = *(GameFlowManager*)0xDA57B0;
+inline auto& TheGameFlowManager = *(GameFlowManager*)0xDA57B0;

@@ -24,4 +24,4 @@ public:
 	auto Free(void* ptr, size_t bytes, const char* kind) { auto f = (void(__thiscall*)(FastMem*, void*, size_t, const char*))0x5F5AF0; return f(this, ptr, bytes, kind); }
 };
 
-auto& gFastMem = *(FastMem*)0xDA5320;
+inline auto& gFastMem = *(FastMem*)0xDA5320;
